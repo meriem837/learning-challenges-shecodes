@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+  </head>
+  <style>
+    .login-info {
+      border: 1px solid black;
+      max-width: fit-content;
+      padding: 10px;
+      display: block;
+      margin: 100px auto;
+      border-radius: 5px;
+    }
+    div {
+      padding: 5px;
+    }
+  </style>
+  <body>
+    <section class="login-info">
+      <h1>Welcome back</h1>
+      <form>
+        <div class="ask-for-email">
+          <label for="email">Enter your email adress</label>
+          <br />
+          <input type="email" id="email" required />
+        </div>
+        <div class="ask-for-password">
+          <label for="password">Enter your password</label>
+          <br />
+          <input type="password" id="password" required />
+        </div>
+        <div class="last-step">
+          <input type="submit" value="Login" />
+        </div>
+      </form>
+    </section>
+  </body>
+</html>
