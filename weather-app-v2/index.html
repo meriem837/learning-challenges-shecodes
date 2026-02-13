@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>weather app</title>
+    <style>
+      .sun {
+        text-align: center;
+        font-size: 31px;
+      }
+      h1 {
+        color: #1a64d6;
+        text-align: center;
+        font-size: 34px;
+        font-family: Helvetica, Arial, sans-serif;
+        padding: 0px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      h2 {
+        text-align: center;
+        font-size: 34px;
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: normal;
+        margin: 0 auto;
+      }
+      ul {
+        list-style: none;
+        margin: 16px 0px;
+        text-align: center;
+        padding-left: 0px;
+      }
+      li {
+        font-size: 18px;
+        font-family: monospace;
+        max-width: 400px;
+        padding: 10px 0px;
+        margin: 0 auto;
+      }
+      li:hover {
+        background-color: #fffbef;
+        border-radius: 10px;
+      }
+      .date {
+        font-weight: bolder;
+        font-family: Helvetica, Arial, sans-serif;
+        max-width: 400px;
+        margin: 18px 0px;
+      }
+      .temperature {
+        color: #4c4b47;
+        margin: 18px;
+        max-width: 400px;
+        margin: 18px 0px;
+      }
+      button {
+        display: block;
+        margin: 0 auto;
+        color: white;
+        padding: 16px 24px;
+        font-size: 15px;
+        background-color: #1a64d6;
+        border: 0.7px solid #1a64d6;
+        border-radius: 30px;
+        box-shadow: 0px 8px 8px rgb(213, 207, 207);
+        transition: all 200ms ease-in-out;
+        margin: 20px auto;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: white;
+        color: #1a64d6;
+      }
+      p {
+        color: #4c4b47;
+        font-family: monospace;
+        text-align: center;
+        font-size: 17px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sun">🌤️</div>
+    <h1>Currently 21° in Tokyo</h1>
+    <h2>
+      13° /
+      <strong>23°</strong>
+    </h2>
+    <ul>
+      <li>
+        <div class="date">🌧️Tomorrow</div>
+        <div class="temperature">10° / <strong>22°</strong></div>
+      </li>
+      <li>
+        <div class="date">🌥️Saturday</div>
+        <div class="temperature">15° / <strong>17°</strong></div>
+      </li>
+      <li>
+        <div class="date">☀️Sunday</div>
+        <div class="temperature">25° / <strong>28°</strong></div>
+      </li>
+    </ul>
+    <button>change city</button>
+    <p>Coded by Meriem Elazzaoui</p>
+    <script>
+      function updateHeading(newHeading) {
+        let heading = document.querySelector("h1");
+        heading.innerHTML = newHeading;
+      }
+      function updateEmoji(newEmoji) {
+        let emoji = document.querySelector(".sun");
+        emoji.innerHTML = newEmoji;
+      }
+      function askWeather() {
+        let city = prompt("what city do you live in?");
+        let temperature = prompt("what tamperature is it?");
+        updateHeading(`currently ${temperature}°C in ${city}`);
+        if (temperature >= 0) {
+          updateEmoji("😄");
+        } else {
+          updateEmoji("🥶");
+        }
+      }
+      let contactBottun = document.querySelector("button");
+      contactBottun.addEventListener("click", askWeather);
+    </script>
+  </body>
+</html>
